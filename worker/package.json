@@ -1,0 +1,29 @@
+{
+  "name": "api-wilayah-indonesia-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for API Wilayah Indonesia",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:prod": "wrangler deploy --env production",
+    "kv:create": "wrangler kv namespace create WILAYAH_KV",
+    "kv:create:preview": "wrangler kv namespace create WILAYAH_KV --preview",
+    "seed": "node scripts/seed-kv.js",
+    "seed:preview": "node scripts/seed-kv.js --preview",
+    "generate": "cd .. && php generate.php",
+    "build": "npm run generate && npm run seed"
+  },
+  "keywords": [
+    "cloudflare-worker",
+    "api",
+    "indonesia",
+    "wilayah"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

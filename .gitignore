@@ -1,1 +1,29 @@
+# Dependencies
 node_modules/
+vendor/
+
+# Build output
+worker/.wrangler/
+worker/scripts/temp-bulk.json
+
+# Environment
+.env
+.env.local
+.dev.vars
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test
+coverage/

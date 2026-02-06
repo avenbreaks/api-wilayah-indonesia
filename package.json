@@ -1,24 +1,30 @@
 {
   "name": "api-wilayah-indonesia",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "API statis data wilayah Indonesia dengan Cloudflare Worker",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d static"
+    "generate": "php generate.php",
+    "worker:dev": "npm run dev --prefix worker",
+    "worker:deploy": "npm run deploy --prefix worker",
+    "worker:seed": "npm run seed --prefix worker",
+    "build": "npm run generate && npm run worker:seed"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emsifa/api-wilayah-indonesia.git"
+    "url": "git+https://github.com/avenbreaks/api-wilayah-indonesia.git"
   },
-  "keywords": [],
+  "keywords": [
+    "indonesia",
+    "wilayah",
+    "api",
+    "cloudflare-worker"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emsifa/api-wilayah-indonesia/issues"
+    "url": "https://github.com/avenbreaks/api-wilayah-indonesia/issues"
   },
-  "homepage": "https://github.com/emsifa/api-wilayah-indonesia#readme",
-  "devDependencies": {
-    "gh-pages": "^2.1.1"
-  }
+  "homepage": "https://github.com/avenbreaks/api-wilayah-indonesia#readme"
 }

@@ -1,0 +1,33 @@
+# Cloudflare Worker Configuration
+# API Wilayah Indonesia
+
+name = "api-wilayah-indonesia"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+account_id = "6c950ee11e29d6722b1b86ff5767a883"
+
+# KV Namespace binding
+# Anda perlu membuat KV namespace terlebih dahulu:
+# wrangler kv namespace create WILAYAH_KV
+# kemudian update id di bawah ini
+[[kv_namespaces]]
+binding = "WILAYAH_KV"
+id = "bfc8644a35cb4ee3ac198b4462732619"
+
+# Routes (opsional - jika menggunakan custom domain)
+# routes = [
+#   { pattern = "api-wilayah.yourdomain.com/*", zone_name = "yourdomain.com" }
+# ]
+
+# Environment variables (jika diperlukan)
+[vars]
+ENVIRONMENT = "production"
+
+# Development environment
+[env.dev]
+name = "api-wilayah-indonesia-dev"
+vars = { ENVIRONMENT = "development" }
+
+[[env.dev.kv_namespaces]]
+binding = "WILAYAH_KV"
+id = "bfc8644a35cb4ee3ac198b4462732619"
